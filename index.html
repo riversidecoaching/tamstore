@@ -154,7 +154,7 @@
       <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
       <button
         style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
-        id="checkout-button-price_1HgXlTKieq2FcDTI7EwyQNSH"
+        id="checkout-button-price_1HgbS7Kieq2FcDTIHkV2vjhJ"
         role="link"
         type="button">
         Checkout
@@ -166,12 +166,12 @@
       (function() {
         var stripe = Stripe('pk_test_51HgUZ9Kieq2FcDTIaVBKA7aF8odFugeI2pPs7IfJemZInWTgwET1oE14SAMy0ZgbQ8zIVSFxMW2Y2Zf2r1aR0X3500T7t4dasA');
 
-        var checkoutButton = document.getElementById('checkout-button-price_1HgXlTKieq2FcDTI7EwyQNSH');
+        var checkoutButton = document.getElementById('checkout-button-price_1HgbS7Kieq2FcDTIHkV2vjhJ');
         checkoutButton.addEventListener('click', function () {
           // When the customer clicks on the button, redirect
           // them to Checkout.
           stripe.redirectToCheckout({
-            lineItems: [{price: 'price_1HgXlTKieq2FcDTI7EwyQNSH', quantity: 1}],
+            lineItems: [{price: 'price_1HgbS7Kieq2FcDTIHkV2vjhJ', quantity: 1}],
             mode: 'payment',
             // Do not rely on the redirect to the successUrl for fulfilling
             // purchases, customers may not always reach the success_url after
@@ -184,7 +184,7 @@
           .then(function (result) {
             if (result.error) {
               // If `redirectToCheckout` fails due to a browser or network
-             // error, display the localized error message to your customer.
+              // error, display the localized error message to your customer.
               var displayError = document.getElementById('error-message');
               displayError.textContent = result.error.message;
             }
